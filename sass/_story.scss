@@ -1,0 +1,84 @@
+.story__picturse {
+    grid-column: full-start/col-start 5;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    z-index: 1;
+    background-image: linear-gradient(to right, rgba($color-primary, 0.4), rgba($color-primary, 0.4)), url("../img/back.jpg");
+    background-size: cover;
+
+    @include resp(50em) {
+        grid-column: full-start /full-end;
+        grid-template-columns: repeat(15, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+
+    }
+
+    &-img-1 {
+        width: 100%;
+        grid-column: 2/6;
+        grid-row: 2/6;
+
+        @include resp(50em) {
+            width: 100%;
+            grid-column: 2/11;
+            grid-row: 2/6;
+
+        }
+
+    }
+
+    &-img-2 {
+        width: 115%;
+        grid-column: 4/-1;
+        grid-row: 4/6;
+        z-index: 2;
+        box-shadow: 0 0 2rem rgba($color: #000000, $alpha: .4);
+
+        @include resp(50em) {
+            width: 100%;
+            grid-column: 9/15;
+            grid-row: 3/5;
+
+        }
+    }
+
+}
+
+.story__content {
+    background-color: $color-grey-light-1;
+    padding: 10rem 8vw;
+    grid-column: col-start 5/full-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+
+    @include resp(63em) {
+        padding: 10% 8vw;
+    }
+
+    @include resp(50em) {
+        grid-column: full-start /full-end;
+        grid-row: 4/5;
+    }
+    @include resp(37em) {
+        padding: 10% 4vw;
+    }
+
+    &-heading-3 {
+        text-transform: uppercase;
+        color: $color-primary;
+        font-size: 1.6rem;
+    }
+
+    &-text {
+        font-size: 1.5rem;
+        line-height: 1.8;
+    }
+
+    &-heading-1 {
+        font-style: italic;
+    }
+
+}
